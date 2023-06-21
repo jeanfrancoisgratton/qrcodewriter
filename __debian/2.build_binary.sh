@@ -10,7 +10,7 @@ echo "Building binary from source"
 cd ../src
 go build -o ../__debian/${PKGDIR}/opt/bin/qrcw .
 strip ../__debian/${PKGDIR}/opt/bin/qrcw
-chown 0:0 ../__debian/${PKGDIR}/opt/bin/qrcw
+sudo chown 0:0 ../__debian/${PKGDIR}/opt/bin/qrcw
 
 echo "Binary built. Now packaging..."
 cd ../__debian/
