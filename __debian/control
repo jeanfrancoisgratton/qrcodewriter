@@ -1,0 +1,8 @@
+Package: qrcodewriter
+Version: 0.100-0
+Architecture: amd64
+Maintainer: J.F.Gratton <nexus@famillegratton.net>
+Description: QR Code writer
+ Create a QR code from a supplied URL
+Section: Administration Utilities
+Depends: gcc
