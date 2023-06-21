@@ -17,6 +17,7 @@ func Changelog() {
 	fmt.Print(`
 VERSION         DATE                    COMMENT
 -------         ----                    -------
+0.200			2023.06.21				fixes subcommand issue
 0.100           2023.06.21              initial version
 \n`)
 }

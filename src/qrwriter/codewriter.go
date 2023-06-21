@@ -11,6 +11,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"strconv"
 )
 
 var Port uint16 = 1718
@@ -19,6 +20,7 @@ var templ = template.Must(template.New("qr").Parse(templateStr))
 
 func QRwrite() {
 	addr := fmt.Sprintf(":%d", Port)
+	fmt.Println(fmt.Sprintf("Open your browser on http://localhost:%s", White(strconv.FormatUint(uint64(Port), 10))))
 	flag.Parse()
 	http.Handle("/", http.HandlerFunc(QR))
 	err := http.ListenAndServe(addr, nil)

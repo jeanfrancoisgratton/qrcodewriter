@@ -9,7 +9,7 @@ import (
 	"qrcodewriter/qrwriter"
 )
 
-var version = "0.500-1 (2023.06.17)"
+var version = "0.200-0 (2023.06.21)"
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -19,6 +19,15 @@ var rootCmd = &cobra.Command{
 	Long:    `Creates a QR code in a browser from a user-supplied URL.`,
 }
 
+var qrCmd = &cobra.Command{
+	Use:     "qr",
+	Short:   "Creates the web listener to write the QR code",
+	Version: version,
+	Long:    `Creates a QR code in a browser from a user-supplied URL.`,
+	Run: func(cmd *cobra.Command, args []string) {
+		qrwriter.QRwrite()
+	},
+}
 var clCmd = &cobra.Command{
 	Use:     "changelog",
 	Aliases: []string{"cl"},
@@ -37,5 +46,6 @@ func Execute() {
 
 func init() {
 	rootCmd.AddCommand(clCmd)
-	rootCmd.PersistentFlags().Uint16VarP(&qrwriter.Port, "port", "p", 1718, "Default port")
+	rootCmd.AddCommand(qrCmd)
+	qrCmd.PersistentFlags().Uint16VarP(&qrwriter.Port, "port", "p", 1718, "Default port")
 }
