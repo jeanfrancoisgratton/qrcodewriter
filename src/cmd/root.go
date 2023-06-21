@@ -37,5 +37,5 @@ func Execute() {
 
 func init() {
 	rootCmd.AddCommand(clCmd)
-	//rootCmd.PersistentFlags().StringVarP(&certs.CertConfigFile, "qrwriter", "e", "defaultCertConfig.json", "environment configuration file.")
+	rootCmd.PersistentFlags().Uint16VarP(&qrwriter.Port, "port", "p", 1718, "Default port")
 }
