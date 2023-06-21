@@ -1,4 +1,4 @@
-// certificateManager : Écrit par Jean-François Gratton (jean-francois@famillegratton.net)
+// qrcodewriter : Écrit par Jean-François Gratton (jean-francois@famillegratton.net)
 // src/cmd/root.go
 
 package cmd
